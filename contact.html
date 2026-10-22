@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opara's Tech store</title>
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f5f9;
+      font-family: Arial, Helvetica, sans-serif;
+      align-items: center;
+      justify-content: center;
+      
+      
+    } 
+
+  .con {
+    justify-content: center;
+    max-width: 560px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px -10px rgba(10, 25, 40, 0.15);
+    padding: 2.2rem 2rem;
+    border: 1px solid #edf2f7;
+    margin-left: 23%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+
+  .form-header {
+    margin-bottom: 2rem;
+  }
+
+  .form-header h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #1e293b;
+    letter-spacing: 0.02em;
+    margin: 0.2rem;
+    text-align: center;
+  }
+
+  .form-header p {
+    color: #5d6f85;
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+
+  form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .c {
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+
+  .c .field {
+    flex: 1 1 200px;
+    min-width: 170px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .field label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #4a5672;
+  }
+
+  .field input, 
+  .field select, 
+  .field textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background-color: #ffffff;
+    border: 1px solid #dde3ea;
+    border-radius: 12px;
+    outline: none;
+    color: #1d2b3f;
+
+  }
+
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    border-color: #2f5b9c;
+    box-shadow: 0 0 0 3px rgba(47, 91, 156, 0.15);
+  }
+
+  .field input::placeholder,
+  .field textarea::placeholder {
+    color: #a9bccc;
+    font-weight: 300;
+    font-size: 0.9rem;
+  }
+
+  .field select {
+    appearance: none;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    
+  }
+
+  .field textarea {
+    border-radius: 16px;
+    min-height: 110px;
+    resize: vertical;
+  }
+
+  .checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.5rem 0 0.25rem;
+  }
+
+  .checkbox-field input[type="checkbox"]{
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0;
+  accent-color: #1f4a81;
+  flex-shrink: 0;
+}
+
+.checkbox-field label {
+  font-size: 0.9rem;
+  font-weight: 450;
+  color: #364d64;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 0.75rem;
+}
+
+.btn {
+  padding: 0.8rem 2.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  background: white;
+  border: 1px solid transparent;
+  font-family: inherit;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #1f3a5f;
+  box-shadow: 0 4px 8px rgba(28, 55, 94, 0.15);
+}
+
+.btn-primary:hover {
+  background-color: #01060a;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid #c6d6e8;
+  color: #2e4b6e;
+}
+
+.btn-secondary:hover {
+  background-color: #f0f5fd;
+  border-color: #9db4d0;
+}
+
+.footernot {
+  margin-top: 2rem;
+  border-top: 1px solid #e6ecf3;
+  padding-top: 1.2rem;
+  font-size: 0.8rem;
+  color: #62778b;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footernot a {
+  color: #2f5b9c;
+  text-decoration: none;
+  border-bottom: 1px dotted #b7cbdf;
+}
+
+.footernot a:hover {
+  border-bottom: 2px solid #1f3a5f;
+}
+
+  /*.field input, select {
+    width: 50%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .field textarea {
+    width: 50%;
+    height: 200px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }
+
+  .checkbox-field {
+
+  } */
+  </style>
+</head>
+<body>
+  <div class="head">
+    <div class="header">
+      <img src="img/logo3.png" alt="brand-logo" style="width: 50px; height: 50px;">
+      <span class="brand-name">Opara's</span>
+    </div>
+    <ul class="head-menu">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a href="service.html">Services</a>
+      </li>
+      <li>
+        <a href="about.html">About</a>
+      </li>
+      <li>
+        <a href="contact.html">Contact</a>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="con">
+    <div class="form-header">
+      <h2>Contact Us</h2>
+      <p>You can always reach us through here. We are always active and ready to serve you. </p>
+    </div>
+    <form action="#" method="post">
+      <div class="c">
+        <div class="field">
+          <label for="fname">First Name:</label>
+          <input type="text" id="fname" name="firstname" placeholder="First name">
+        </div>
+
+        <div class="field">
+          <label for="lname">Last Name:</label>
+          <input type="text" id="lname" name="lastname" placeholder="Last name">
+        </div>
+      </div>
+      <div class="c">
+
+        <div class="field">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Email">
+        </div>
+
+        <div class="field">
+          <label for="pnumber">Phone No:</label>
+          <input type="number" id="pnumber" name="phone number" placeholder="Phone No.">
+        </div>
+
+        <div class="field">     
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="" disabled selected>Select Your Country</option>
+            <option value="nigeria">Nigeria</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="text">Comment:</label>
+          <textarea id="comment" name="comment" placeholder="Your Comment"></textarea>
+        </div>
+
+      </div>
+
+      <div class="checkbox-field">
+        <input type="checkbox" name="term" id="term">
+        <label for="checkbox">I agree to the terms&condition</label>
+      </div>
+
+      <div class="action-row">
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <button type="reset" class="btn btn-secondary">Clear Message</button>
+      </div>
+    </form>
+
+    <div class="footernot">
+      <span>@2025 Opara's </span>
+      <a href="#">Privacy</a>
+    </div>
+    
+  </div>
+</body>
+</html>
